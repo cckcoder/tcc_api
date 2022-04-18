@@ -8,4 +8,4 @@ app.include_router(inventory_router.router)
 
 @app.get("/")
 def hello_word():
-    return { "hello": "world" }
+    return { "hello": "TCC" }
