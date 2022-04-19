@@ -32,6 +32,9 @@ class InventoryDisplayBase(BaseModel):
     created_date: datetime
     updated_date: datetime
 
+    class Config:
+        orm_mode = True
+
 class InventoryBase(BaseModel):
     description: str
     price: Decimal
