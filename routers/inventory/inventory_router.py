@@ -18,18 +18,18 @@ router = APIRouter(
 def all_inventory(db: Session = Depends(get_db)):
     return inventory_controller.get_all_inventory(db)
 
-@router.get("/{id}")
-def inventory_by_id(id: int):
-    pass
+@router.get("/{inventory_id}", response_model=InventoryDisplayBase)
+def inventory_by_id(inventory_id: int, db: Session = Depends(get_db)):
+    return inventory_controller.get_inventory_by_id(db, inventory_id)
 
 @router.post("/")
 def create_inventory(request: InventoryBase, db: Session = Depends(get_db)):
     return inventory_controller.create_inventory(db, request)
 
-@router.put("/{id}")
-def update_name(id: int):
-    pass
+@router.put("/{inventory_id}")
+def update_name(inventory_id: int, request: InventoryBase, db: Session = Depends(get_db)):
+    return inventory_controller.update_inventory(db, inventory_id, request)
 
-@router.delete("/{id}")
-def delete_inventory(id: int):
-    pass
+@router.delete("/{inventory_id}")
+def delete_inventory(inventory_id: int, db: Session = Depends(get_db)):
+    return inventory_controller.deleted_inventory(db, inventory_id)
