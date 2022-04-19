@@ -1,8 +1,13 @@
 from sqlalchemy import Column
-from sqlalchemy.sql.sqltype import Integer, String, DateTime, DECIMAL
+from sqlalchemy.sql.sqltypes import Integer, String, DateTime, DECIMAL
 from sqlalchemy.sql import func
 
 from models.database import Base
+
+from datetime import datetime
+from decimal import Decimal
+from pydantic import BaseModel
+from typing import Optional
 
 
 class DbInventory(Base):
@@ -16,5 +21,18 @@ class DbInventory(Base):
         DateTime(timezone=True),
         nullable=False,
         default=func.now(),
-        onupdcate=func.now()
+        onupdate=func.now()
     )
+
+class InventoryDisplayBase(BaseModel):
+    id: int
+    description: Optional[str] = ""
+    price: Decimal
+    stock: int
+    created_date: datetime
+    updated_date: datetime
+
+class InventoryBase(BaseModel):
+    description: str
+    price: Decimal
+    stock: int
