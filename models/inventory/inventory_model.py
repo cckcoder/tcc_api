@@ -18,11 +18,9 @@ class DbInventory(Base):
     stock = Column(Integer)
     created_date = Column(DateTime(timezone=True), server_default=func.now())
     updated_date = Column(
-        DateTime(timezone=True),
-        nullable=False,
-        default=func.now(),
-        onupdate=func.now()
+        DateTime(timezone=True), nullable=False, default=func.now(), onupdate=func.now()
     )
+
 
 class InventoryDisplayBase(BaseModel):
     id: int
@@ -34,6 +32,7 @@ class InventoryDisplayBase(BaseModel):
 
     class Config:
         orm_mode = True
+
 
 class InventoryBase(BaseModel):
     description: str

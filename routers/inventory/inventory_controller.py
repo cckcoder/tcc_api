@@ -7,9 +7,7 @@ from models.inventory.inventory_model import DbInventory, InventoryBase
 
 def create_inventory(db: Session, request: InventoryBase):
     new_inventory = DbInventory(
-        description=request.description,
-        price=request.price,
-        stock=request.stock
+        description=request.description, price=request.price, stock=request.stock
     )
 
     db.add(new_inventory)
@@ -42,5 +40,5 @@ def deleted_inventory(db: Session, inventory_id: int):
     db.delete(inventory)
     db.commit()
     return JSONResponse(
-        content={ "detail": f"Inventory id {inventory_id} deleted successful!" }
+        content={"detail": f"Inventory id {inventory_id} deleted successful!"}
     )
