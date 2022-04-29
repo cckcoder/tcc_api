@@ -2,6 +2,7 @@ from fastapi import FastAPI
 
 from models.database import engine, Base
 from models.users import users_model
+from models.inventory import inventory_model
 
 from routers.inventory import inventory_router
 from routers.users import users_router
@@ -18,5 +19,6 @@ def hello_word():
     return {"hello": "TCC"}
 
 
-Base.metadata.create_all(engine)
-# users_model.Base.metadata.create_all(engine)
+# Base.metadata.create_all(engine)
+users_model.Base.metadata.create_all(engine)
+inventory_model.Base.metadata.create_all(engine)
