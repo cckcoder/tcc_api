@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from models.database import engine, Base
+from models.database import engine
 from models.users import users_model
 from models.inventory import inventory_model
 
