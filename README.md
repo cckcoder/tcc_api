@@ -39,3 +39,5 @@
 * [JWT](https://medium.com/rootusercc/json-web-token-%E0%B8%A1%E0%B8%B2%E0%B8%95%E0%B8%A3%E0%B8%90%E0%B8%B2%E0%B8%99%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88-%E0%B9%83%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%97%E0%B8%B3-authentication-b0760dd9acd1)
 
 * [JWT 2](https://www.devahoy.com/blog/2016/07/understanding-token-and-jwt-create-authentication-with-hapijs)
+
+* [FastAPI deploy to heroku](https://stackoverflow.com/questions/68600980/deploying-fastapi-to-heroku-fails)
