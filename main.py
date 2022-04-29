@@ -18,5 +18,5 @@ def hello_word():
     return {"hello": "TCC"}
 
 
-# Base.metadata.create_all(engine)
-users_model.Base.metadata.create_all(engine)
+Base.metadata.create_all(engine)
+# users_model.Base.metadata.create_all(engine)
